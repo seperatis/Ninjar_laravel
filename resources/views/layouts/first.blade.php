@@ -19,14 +19,14 @@
 <body class="pricing-page">
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent fixed-top">
-    <div class="container-fluid">
+    <div class="container-fluid top-bar">
         <div class="navbar-wrapper">
             <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('assets/images/logo.png') }}" width="300"></a>
         </div>
         <div class="google-ads" ></div>
-        <div>
-            <span style="position:relative;">
-                <button class="btn btn-icon btn-round btn-simple btn-warning" style="border: none;">
+        <div class="app-button-content">
+            <span>
+                <button class="btn btn-icon btn-round btn-simple btn-warning alert-button" style="border: none;">
                     <i class="tim-icons icon-bell-55" style="font-size: 1.6em;"></i><span class="label_number">23</span>
                 </button>
 

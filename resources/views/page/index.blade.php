@@ -31,7 +31,7 @@
             <h4 class="card-title text-uppercase" style="letter-spacing: 2px; font-weight: 700"><i class="tim-icons icon-coins"> </i> &nbsp;&nbsp;Pool Coins</h4>
           </div>
           <div class="card-body">
-            <div class="table-responsive" style="overflow: auto">
+            <div class="table-responsive table-first" style="overflow: auto">
               <table class="table table-striped table-hover">
                 <thead class="text-primary">
                 <tr>
@@ -78,7 +78,7 @@
                       <td class="text-right">
                         {{ thousandsCurrencyFormat((int)$pool->networkStats->networkDifficulty) }}
                       </td>
-                      <td class="text-center">
+                      <td class="text-center" style="min-width: 200px">
                         <a href="{{ route('stats', ['id' => $pool->id]) }}" class="btn btn-round btn-info">
                           <img width="25" src="{{ asset('assets/images/dgb1.png') }}" alt="">&nbsp;&nbsp;Go Mine
                         </a>
@@ -103,7 +103,7 @@
             <h4 class="card-title text-uppercase" style="letter-spacing: 2px; font-weight: 700"><i class="tim-icons icon-money-coins"> </i> &nbsp;&nbsp;Solo Mining</h4>
           </div>
           <div class="card-body">
-            <div class="table-responsive" style="overflow: auto">
+            <div class="table-responsive table-first" style="overflow: auto">
               <table class="table table-striped table-hover">
                 <thead class="text-primary">
                 <tr>
@@ -150,7 +150,7 @@
                       <td class="text-right">
                         {{ thousandsCurrencyFormat((int)$pool->networkStats->networkDifficulty) }}
                       </td>
-                      <td class="text-center">
+                      <td class="text-center" style="min-width: 200px">
                         <a href="{{ route('stats', ['id' => $pool->id]) }}" class="btn btn-round btn-primary">
                           <img width="25" src="{{ asset('assets/images/lightcoin.png') }}" alt="">&nbsp;&nbsp;Go Mine
                         </a>
