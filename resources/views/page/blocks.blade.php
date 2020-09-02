@@ -57,7 +57,7 @@
                     {"data": "miner"},
                     {"data": 'blockHeight'},
                     {"data": null, "class": "text-center"},
-                    {"data": 'status'},
+                    {"data": null},
                     {"data": 'reward'},
                     {"data": null},
                 ],
@@ -79,11 +79,32 @@
                             var string = '';
                             if (data.effort === null){
                                 string = '0%';
+                                content = '<span class="text-success">'+ string +'</span>';
                             } else {
                                 string = Math.round(data.effort*100);
                                 string = string + '%';
+                                if (data.effort*100<100){
+                                    content = '<span class="text-success">'+ string +'</span>'
+                                } else if(100 <= data.effort*100 && data.effort*100<250) {
+                                    content = '<span class="text-warning">'+ string +'</span>'
+                                } else {
+                                    content = '<span class="text-danger">'+ string +'</span>'
+                                }
                             }
-                            return string;
+                            return content;
+                        }
+                    },
+                    {
+                        "targets": 4,
+                        "render": function (data, type, row, meta) {
+                            if (data.status.toLowerCase() === 'confirmed'){
+                                content = '<span class="text-success">'+ data.status +'</span>'
+                            } else if(data.status.toLowerCase() === 'pending') {
+                                content = '<span class="text-warning">'+ data.status +'</span>'
+                            } else {
+                                content = '<span class="text-danger">'+ data.status +'</span>'
+                            }
+                            return content;
                         }
                     },
                     {
