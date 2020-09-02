@@ -46,7 +46,7 @@
                                     <td class="text-right">
                                         <button class="btn btn-primary btn-round btn-fill" onclick="showInfoModal('{{ session(session('id'))->address }}')">View</button>
                                         <a class="btn btn-info btn-round btn-fill" href="{{ session(session('id'))->addressInfoLink }}" target="_blank">
-                                            Go <i class="tim-icons icon-spaceship"></i></a>
+                                            Goto</a>
                                     </td>
                                 </tr>
                                 <tr>
