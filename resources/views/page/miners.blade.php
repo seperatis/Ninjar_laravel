@@ -32,7 +32,6 @@
                         <table class="table tablesorter " id="simple-table">
                             <thead class=" text-primary">
                             <tr>
-                                <th class="text-center">#</th>
                                 <th>Address</th>
                                 <th>Hashrate</th>
                                 <th>Share Rate</th>
@@ -41,7 +40,7 @@
                             <tbody>
                             @foreach($miners as $miner)
                                 <tr>
-                                    <td class="text-center">0</td>
+
                                     <td>
                                         {{ substr($miner->miner, 0, 10) }} ... ... {{ substr($miner->miner, -10) }}
                                     </td>
@@ -60,34 +59,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 ml-auto">
-            <div class="card card-chart">
-                <div class="card-header">
-                    <h5 class="card-category"></h5>
-                    <h3 class="card-title text-info"><i class="tim-icons icon-shape-star"></i> Hashrate
-                    </h3>
-                </div>
-                <div class="card-body">
-                    <div class="chart-area">
-                        <canvas id="hashrate"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 ml-auto">
-            <div class="card card-chart">
-                <div class="card-header">
-                    <h5 class="card-category"></h5>
-                    <h3 class="card-title text-primary"><i class="tim-icons icon-shape-star"></i> Shares Per Second
-                    </h3>
-                </div>
-                <div class="card-body">
-                    <div class="chart-area">
-                        <canvas id="sharesPerSecond"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 @endsection
 
