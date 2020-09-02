@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('favicon.ico') }}">
   <link rel="icon" type="image/ico" href="{{ asset('favicon.ico') }}">
   <title>
-    Black Dashboard PRO by Creative Tim
+    {{ session('id') }} : Lucky Blocks Ninja Mining Pool
   </title>
 
   <link href="{{ asset('assets/css/nucleo-icons.css') }}" rel="stylesheet" />
