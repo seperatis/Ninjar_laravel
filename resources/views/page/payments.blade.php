@@ -51,13 +51,24 @@
                     "dataSrc": "",
                 },
                 "columns": [
-                    {"data": "created"},
+                    {"data": null},
                     {"data": 'address'},
                     {"data": null,},
                     {"data": 'transactionConfirmationData'},
                     {"data": null, "class": "text-center"},
                 ],
                 "columnDefs": [
+                    {
+                        "targets": 0,
+                        "render": function ( data, type, row, meta ) {
+                            date = new Date(data.created);
+                            var localOffset = date.getTimezoneOffset() * 60000;
+                            var localTime = date.getTime();
+                            date = localTime - localOffset;
+                            newDate = new Date(date);
+                            return newDate.toString();
+                        }
+                    },
                     {
                         "targets": 4,
                         "render": function( data, type, row, meta ){
