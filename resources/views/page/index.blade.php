@@ -136,7 +136,7 @@
                         {{ $pool->coin->algorithm }}
                       </td>
                       <td class="text-center">
-                        {{ count($pool->topMiners) }}
+                        {{ $pool->poolStats->connectedMiners }}
                       </td>
                       <td class="text-right">
                         {{ thousandsCurrencyFormat((int)$pool->poolStats->poolHashrate) }}H/s
