@@ -71,7 +71,7 @@
                                     </td>
                                     <td>Minimum Payment</td>
                                     <td class="text-right">
-                                        {{ session(session('id'))->paymentProcessing->minimumPayment }} DGB
+                                        {{ session(session('id'))->paymentProcessing->minimumPayment }} {{ session(session('id'))->coin->type }}
                                     </td>
                                 </tr>
                                 <tr>
