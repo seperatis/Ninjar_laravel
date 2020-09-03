@@ -120,7 +120,7 @@
                         <div class="col-7">
                             <div class="numbers">
                                 <p class="card-category">Payment Threshold</p>
-                                <h3 class="card-title">{{session(session('id'))->paymentProcessing->minimumPayment}} DGB
+                                <h3 class="card-title">{{session(session('id'))->paymentProcessing->minimumPayment}} {{session(session('id'))->coin->type}}
                                     <span class="text-primary" style="font-weight: 500; font-size: 14px">{{session(session('id'))->paymentProcessing->payoutScheme}}</span></h3>
                             </div>
                         </div>
