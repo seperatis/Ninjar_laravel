@@ -116,12 +116,12 @@
                             <p>
                                 To get started mining and use this pool you need the following
                             </p><ul>
-                                <li>Digibyte-Scrypt Wallet address</li>
+                                <li>{{ session(session('id'))->coin->name }} Wallet address</li>
                                 <li>crypto mining software that supports the Digibyte-Scrypt coin and aglorithm Scrypt</li>
                                 <li>hardware to run it on. This can be you home PC, mining rig, ASIC miner or cloud mining</li>
                             </ul>
                             <br>
-                            <h4>Digibyte-Scrypt Wallet address</h4>
+                            <h4>{{ session(session('id'))->coin->name }} Wallet address</h4>
                             A wallet address is needed to payout you shares mined at this pool server.<br>
                             When the total mined value is past the payout threshold, we will send your coin to this wallet address.<br>
                             <br>
