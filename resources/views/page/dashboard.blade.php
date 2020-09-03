@@ -158,10 +158,11 @@
         const showForm = function() {
             Swal.fire({
                 title: 'Please enter your coin wallet address.',
-                input: 'text',
-                inputAttributes: {
-                    autocapitalize: 'off'
-                },
+                @if(count(session(session('id'))->topMiners)==0)
+                    html: `<input id='value' autocapitalize="off" placeholder="Please enter miner" class="swal2-input" value="" type="text" style="display: flex;">`,
+                @else
+                    html: `<input id='value' autocapitalize="off" class="swal2-input" value="{{ session(session('id'))->topMiners[0]->miner }}" type="text" style="display: flex;">`,
+                @endif
                 showCancelButton: true,
                 confirmButtonText: 'Look up',
                 customClass: {
@@ -170,7 +171,8 @@
                 },
                 buttonsStyling: false,
                 showLoaderOnConfirm: true,
-                preConfirm: (wallet) => {
+                preConfirm: () => {
+                    wallet = document.querySelector('#value').value;
                     return fetch(`//luckyblocks.ninja:4000/api/pools/dgb1/miners/${wallet}`)
                         .then(response => {
                             if (!response.ok) {
