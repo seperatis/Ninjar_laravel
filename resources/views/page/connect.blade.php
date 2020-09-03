@@ -16,7 +16,11 @@
                                 <tr>
                                     <td>
                                         <div class="flag">
-                                            <img src="{{ asset('assets/images/dgb1.png') }}" width="30">
+                                            @if(session(session('id'))->coin->type == 'LTC')
+                                                <img src="{{ asset('assets/images/lightcoin.png') }}" width="30">
+                                            @else
+                                                <img src="{{ asset('assets/images/dgb1.png') }}" width="30">
+                                            @endif
                                         </div>
                                     </td>
                                     <td>Crypto Coin name</td>
@@ -27,7 +31,11 @@
                                 <tr>
                                     <td>
                                         <div class="flag">
-                                            <img src="{{ asset('assets/images/dgb1.png') }}" width="30">
+                                            @if(session(session('id'))->coin->type == 'LTC')
+                                                <img src="{{ asset('assets/images/lightcoin.png') }}" width="30">
+                                            @else
+                                                <img src="{{ asset('assets/images/dgb1.png') }}" width="30">
+                                            @endif
                                         </div>
                                     </td>
                                     <td>Coin Algorithm</td>
@@ -39,7 +47,11 @@
                                 <tr>
                                     <td>
                                         <div class="flag">
-                                            <img src="{{ asset('assets/images/dgb1.png') }}" width="30">
+                                            @if(session(session('id'))->coin->type == 'LTC')
+                                                <img src="{{ asset('assets/images/lightcoin.png') }}" width="30">
+                                            @else
+                                                <img src="{{ asset('assets/images/dgb1.png') }}" width="30">
+                                            @endif
                                         </div>
                                     </td>
                                     <td>Pool Wallet</td>
@@ -52,7 +64,11 @@
                                 <tr>
                                     <td>
                                         <div class="flag">
-                                            <img src="{{ asset('assets/images/dgb1.png') }}" width="30">
+                                            @if(session(session('id'))->coin->type == 'LTC')
+                                                <img src="{{ asset('assets/images/lightcoin.png') }}" width="30">
+                                            @else
+                                                <img src="{{ asset('assets/images/dgb1.png') }}" width="30">
+                                            @endif
                                         </div>
                                     </td>
                                     <td>Payout Scheme</td>
@@ -63,7 +79,11 @@
                                 <tr>
                                     <td>
                                         <div class="flag">
-                                            <img src="{{ asset('assets/images/dgb1.png') }}" width="30">
+                                            @if(session(session('id'))->coin->type == 'LTC')
+                                                <img src="{{ asset('assets/images/lightcoin.png') }}" width="30">
+                                            @else
+                                                <img src="{{ asset('assets/images/dgb1.png') }}" width="30">
+                                            @endif
                                         </div>
                                     </td>
                                     <td>Minimum Payment</td>
@@ -74,7 +94,11 @@
                                 <tr>
                                     <td>
                                         <div class="flag">
-                                            <img src="{{ asset('assets/images/dgb1.png') }}" width="30">
+                                            @if(session(session('id'))->coin->type == 'LTC')
+                                                <img src="{{ asset('assets/images/lightcoin.png') }}" width="30">
+                                            @else
+                                                <img src="{{ asset('assets/images/dgb1.png') }}" width="30">
+                                            @endif
                                         </div>
                                     </td>
                                     <td>Pool Fee</td>
@@ -86,7 +110,11 @@
                                     <tr>
                                         <td>
                                             <div class="flag">
-                                                <img src="{{ asset('assets/images/dgb1.png') }}" width="30">
+                                                @if(session(session('id'))->coin->type == 'LTC')
+                                                    <img src="{{ asset('assets/images/lightcoin.png') }}" width="30">
+                                                @else
+                                                    <img src="{{ asset('assets/images/dgb1.png') }}" width="30">
+                                                @endif
                                             </div>
                                         </td>
                                         <td>stratum+tcp://dgb.luckyblocks.ninja:{{ $key }}</td>
