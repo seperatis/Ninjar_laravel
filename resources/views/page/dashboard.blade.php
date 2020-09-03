@@ -213,9 +213,11 @@
                         var createDate = stats.convertLocalDateToUTCDate(new Date(value.created), false);
                         labels.push(createDate.getHours() + ":00");
                         // spliter = stats.formatter((value.workers.Jane.hashrate+value.workers.Dick.hashrate), 2, '').split(' ');
-                        number = (value.workers.Jane.hashrate+value.workers.Dick.hashrate) / 1000000000;
-                        memberHashRate.push(number);
-
+                        var number = 0.00;
+                        $.each(value.workers, function (index, value) {
+                            number = number + value.hashrate;
+                        });
+                        memberHashRate.push(number/1000000000);
                     });
                     memberHashRate_unit = 'G';
                     id = 'memberHashRate';
