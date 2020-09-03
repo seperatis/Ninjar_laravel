@@ -212,12 +212,12 @@
                     $.each(result.value.performanceSamples, function(index, value){
                         var createDate = stats.convertLocalDateToUTCDate(new Date(value.created), false);
                         labels.push(createDate.getHours() + ":00");
-                        spliter = stats.formatter((value.workers.Jane.hashrate+value.workers.Dick.hashrate), 2, '').split(' ');
-                        memberHashRate.push(parseFloat(spliter[0]));
-                        if (spliter[1]) {
-                            memberHashRate_unit = spliter[1];
-                        }
+                        // spliter = stats.formatter((value.workers.Jane.hashrate+value.workers.Dick.hashrate), 2, '').split(' ');
+                        number = (value.workers.Jane.hashrate+value.workers.Dick.hashrate) / 1000000000;
+                        memberHashRate.push(number);
+
                     });
+                    memberHashRate_unit = 'G';
                     id = 'memberHashRate';
                     chart_title = 'Member\'s Hash Rate';
                     stats.initChart(id, labels, memberHashRate, memberHashRate_unit, chart_title);
