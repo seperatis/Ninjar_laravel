@@ -124,10 +124,10 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th style="padding-left: 15px;">index</th>
-                                <th style="padding-left: 15px;">name</th>
-                                <th style="padding-left: 15px;">Hashrate</th>
-                                <th style="padding-left: 15px;">Share Rate</th>
+                                <th>index</th>
+                                <th>name</th>
+                                <th>Hashrate</th>
+                                <th>Share Rate</th>
                             </tr>
                             </thead>
                             <tbody id="table_content">
