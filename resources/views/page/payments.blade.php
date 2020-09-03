@@ -54,7 +54,7 @@
                     {"data": null},
                     {"data": 'address'},
                     {"data": null,},
-                    {"data": 'transactionConfirmationData'},
+                    {"data": null},
                     {"data": null, "class": "text-center"},
                 ],
                 "columnDefs": [
@@ -68,6 +68,15 @@
                             newDate = new Date(date);
                             return newDate.toString();
                         }
+                    },
+                    {
+                      "targets": 3,
+                      "render": function (data, type, row, meta) {
+                          string = data.transactionConfirmationData;
+                          string = string.substring(0,10) + ' ... ... ' +
+                              string.substring(string.length-10, string.length);
+                          return string;
+                      }
                     },
                     {
                         "targets": 4,

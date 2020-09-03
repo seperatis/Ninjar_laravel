@@ -110,4 +110,13 @@
         margin-left: auto;
         margin-right: auto;
     }
+
+    /*table.dataTable > tbody > tr.child ul.dtr-details .dtr-data{*/
+        /*font-size: 10px!important;*/
+    /*}*/
+    .dtr-data,
+    .dtr-data .btn{
+        display: block;
+        margin: 5px 0;
+    }
 }
