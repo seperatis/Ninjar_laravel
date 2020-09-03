@@ -158,7 +158,7 @@
                 showLoaderOnConfirm: true,
                 preConfirm: () => {
                     wallet = document.querySelector('#value').value;
-                    return fetch(`//luckyblocks.ninja:4000/api/pools/dgb1/miners/${wallet}`)
+                    return fetch(`//luckyblocks.ninja:4000/api/pools/{{ session('id') }}/miners/${wallet}`)
                         .then(response => {
                             if (!response.ok) {
                                 throw new Error(response.statusText)
@@ -173,6 +173,7 @@
                 },
                 allowOutsideClick: () => !Swal.isLoading()
             }).then((result) => {
+                console.log(result);
                 if (result.value.pendingShares) {
                     Swal.fire({
                         position: 'center',
@@ -187,13 +188,6 @@
                     $('#totalPaid').text(stats.formatter(result.value.totalPaid, 2, ''));
                     $('#todayPaid').text(stats.formatter(result.value.todayPaid, 2, ''));
 
-
-
-                    // $('#dickHashrate').text(stats.formatter(result.value.performance.workers.Dick.hashrate, 2, ''));
-                    // $('#dickShareRate').text(result.value.performance.workers.Dick.sharesPerSecond);
-                    // $('#janeHashrate').text(stats.formatter(result.value.performance.workers.Jane.hashrate, 2, ''));
-                    // $('#janeShareRate').text(result.value.performance.workers.Jane.sharesPerSecond);
-                    // $('#hash_rate').text(result.value.performance.workers.Jane.hashrate + result.value.performance.workers.Jane.hashrate);
                     var table = '<td style="padding-right: 20px; width: 100px">\n' +
                         '<p class="title text-right" style="width: 100px;">Name</p>\n' +
                         '<p class="text-muted text-right" style="width: 100px;">Hashrate</p>\n' +
