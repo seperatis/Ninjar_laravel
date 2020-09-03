@@ -122,10 +122,16 @@
                 <div class="card-body">
                     <div class="table-full-width table-responsive">
                         <table class="table">
-                            <tbody>
-                            <tr id="tr_content">
-
+                            <thead>
+                            <tr>
+                                <th style="padding-left: 15px;">index</th>
+                                <th style="padding-left: 15px;">name</th>
+                                <th style="padding-left: 15px;">Hashrate</th>
+                                <th style="padding-left: 15px;">Share Rate</th>
                             </tr>
+                            </thead>
+                            <tbody id="table_content">
+
                             </tbody>
                         </table>
                     </div>
@@ -188,24 +194,25 @@
                     $('#totalPaid').text(stats.formatter(result.value.totalPaid, 2, ''));
                     $('#todayPaid').text(stats.formatter(result.value.todayPaid, 2, ''));
 
-                    var table = '<td style="padding-right: 20px; width: 100px">\n' +
-                        '<p class="title text-right" style="width: 100px;">Name</p>\n' +
-                        '<p class="text-muted text-right" style="width: 100px;">Hashrate</p>\n' +
-                        '<p class="text-muted text-right" style="width: 100px;">Share Rate</p>\n' +
-                        '</td>';
+                    var table = '';
                     var hashrate = 0;
                     var i =0;
                     $.each(result.value.performanceSamples[result.value.performanceSamples.length-1].workers, function (index, value) {
-                        table = table + '<td>' +
-                            '<p class="title">'+ index +'</p>' +
-                            '<p class="text-muted">'+ stats.formatter(value.hashrate, 2, '') +'</p>' +
-                            '<p class="text-muted">'+ value.sharesPerSecond +'</p>' +
-                            '</td>';
                         i++;
+                        var name = '';
+                        if (index === '' ){
+                            name = 'Unnamed';
+                        } else {
+                            name = index;
+                        }
+                        table = table + '<td>' + i + '</td>' + '<td>' + name + '</td>' +
+                            '<td>' + stats.formatter(value.hashrate, 2, '') + '</td>' +
+                            '<td>' + value.sharesPerSecond + '</td>' + '</tr>';
+
                         hashrate = hashrate + value.hashrate;
                     });
                     $('#worker_number').text(i);
-                    $('#tr_content').html(table);
+                    $('#table_content').html(table);
                     $('#hash_rate').html(stats.formatter(hashrate, 2, '') + 'H/s');
 
 
