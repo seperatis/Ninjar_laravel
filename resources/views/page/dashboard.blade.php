@@ -99,8 +99,8 @@
         <div class="col-lg-6">
             <div class="card card-chart">
                 <div class="card-header">
-                    <h5 class="card-category">Total Shipments</h5>
-                    <h3 class="card-title"><i class="tim-icons icon-bell-55 text-primary"></i> 763,215</h3>
+                    <h5 class="card-category">Miner's Hash Rate</h5>
+                    <h3 class="card-title"><i class="tim-icons icon-bell-55 text-primary"></i><span id="hash_rate"></span></h3>
                 </div>
                 <div class="card-body">
                     <div class="chart-area">
@@ -115,7 +115,7 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-header">
-                    <h6 class="title d-inline">Workers (2)</h6>
+                    <h6 class="title d-inline" id="workers">Workers (<span id="worker_number"></span>)</h6>
                     <p class="card-category d-inline">List of miners working for you</p>
 
                 </div>
@@ -123,22 +123,7 @@
                     <div class="table-full-width table-responsive">
                         <table class="table">
                             <tbody>
-                            <tr>
-                                <td style="padding-right: 20px">
-                                    <p class="title text-right">Name</p>
-                                    <p class="text-muted text-right">Hashrate</p>
-                                    <p class="text-muted text-right">Share Rate</p>
-                                </td>
-                                <td>
-                                    <p class="title">Dick</p>
-                                    <p class="text-muted" id="dickHashrate">Dwuamish Head, Seattle, WA 8:47 AM</p>
-                                    <p class="text-muted" id="dickShareRate">Dwuamish Head, Seattle, WA 8:47 AM</p>
-                                </td>
-                                <td>
-                                    <p class="title">Jane</p>
-                                    <p class="text-muted" id="janeHashrate">Dwuamish Head, Seattle, WA 8:47 AM</p>
-                                    <p class="text-muted" id="janeShareRate">Dwuamish Head, Seattle, WA 8:47 AM</p>
-                                </td>
+                            <tr id="tr_content">
 
                             </tr>
                             </tbody>
@@ -188,7 +173,6 @@
                 },
                 allowOutsideClick: () => !Swal.isLoading()
             }).then((result) => {
-                console.log(result);
                 if (result.value.pendingShares) {
                     Swal.fire({
                         position: 'center',
@@ -202,10 +186,35 @@
                     $('#pendingBalance').text(stats.formatter(result.value.pendingBalance, 2, ''));
                     $('#totalPaid').text(stats.formatter(result.value.totalPaid, 2, ''));
                     $('#todayPaid').text(stats.formatter(result.value.todayPaid, 2, ''));
-                    $('#dickHashrate').text(stats.formatter(result.value.performance.workers.Dick.hashrate, 2, ''));
-                    $('#dickShareRate').text(result.value.performance.workers.Dick.sharesPerSecond);
-                    $('#janeHashrate').text(stats.formatter(result.value.performance.workers.Jane.hashrate, 2, ''));
-                    $('#janeShareRate').text(result.value.performance.workers.Jane.sharesPerSecond);
+
+
+
+                    // $('#dickHashrate').text(stats.formatter(result.value.performance.workers.Dick.hashrate, 2, ''));
+                    // $('#dickShareRate').text(result.value.performance.workers.Dick.sharesPerSecond);
+                    // $('#janeHashrate').text(stats.formatter(result.value.performance.workers.Jane.hashrate, 2, ''));
+                    // $('#janeShareRate').text(result.value.performance.workers.Jane.sharesPerSecond);
+                    // $('#hash_rate').text(result.value.performance.workers.Jane.hashrate + result.value.performance.workers.Jane.hashrate);
+                    var table = '<td style="padding-right: 20px; width: 100px">\n' +
+                        '<p class="title text-right" style="width: 100px;">Name</p>\n' +
+                        '<p class="text-muted text-right" style="width: 100px;">Hashrate</p>\n' +
+                        '<p class="text-muted text-right" style="width: 100px;">Share Rate</p>\n' +
+                        '</td>';
+                    var hashrate = 0;
+                    var i =0;
+                    $.each(result.value.performanceSamples[result.value.performanceSamples.length-1].workers, function (index, value) {
+                        table = table + '<td>' +
+                            '<p class="title">'+ index +'</p>' +
+                            '<p class="text-muted">'+ stats.formatter(value.hashrate, 2, '') +'</p>' +
+                            '<p class="text-muted">'+ value.sharesPerSecond +'</p>' +
+                            '</td>';
+                        i++;
+                        hashrate = hashrate + value.hashrate;
+                    });
+                    $('#worker_number').text(i);
+                    $('#tr_content').html(table);
+                    $('#hash_rate').html(stats.formatter(hashrate, 2, '') + 'H/s');
+
+
                     labels = [];
                     memberHashRate = [];
                     memberHashRate_unit = '';
@@ -242,7 +251,6 @@
                         confirmButtonText: 'Try Again',
                     }).then(function (isConfirm) {
                         if (isConfirm.value){
-                            console.log(isConfirm.value);
                             showForm();
                         }
                     })
