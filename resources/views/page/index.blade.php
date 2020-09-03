@@ -53,7 +53,7 @@
                       <td class="text-center">
                         <a href="{{ route('stats', ['id' => $pool->id]) }}">
                           <div class="photo">
-                            <img src="{{ asset('assets/images/dgb1.png') }}" alt="image">
+                            <img src="{{ asset('assets/images/icon/'.strtolower($pool->coin->type)).'.png' }}" alt="image">
                           </div>
                         </a>
                       </td>
@@ -80,7 +80,8 @@
                       </td>
                       <td class="text-center" style="min-width: 200px">
                         <a href="{{ route('stats', ['id' => $pool->id]) }}" class="btn btn-round btn-info">
-                          <img width="25" src="{{ asset('assets/images/dgb1.png') }}" alt="">&nbsp;&nbsp;Go Mine
+                          <img width="25" src="{{ asset('assets/images/icon/'.strtolower($pool->coin->type)).'.png' }}" alt="image">
+                          &nbsp;&nbsp;Go Mine
                         </a>
                       </td>
                     </tr>
@@ -125,7 +126,7 @@
                       <td class="text-center">
                         <a href="{{ route('stats', ['id' => $pool->id]) }}">
                           <div class="photo">
-                            <img src="{{ asset('assets/images/lightcoin.png') }}" alt="image">
+                            <img src="{{ asset('assets/images/icon/'.strtolower($pool->coin->type)).'.png' }}" alt="image">
                           </div>
                         </a>
                       </td>
@@ -152,7 +153,8 @@
                       </td>
                       <td class="text-center" style="min-width: 200px">
                         <a href="{{ route('stats', ['id' => $pool->id]) }}" class="btn btn-round btn-primary">
-                          <img width="25" src="{{ asset('assets/images/lightcoin.png') }}" alt="">&nbsp;&nbsp;Go Mine
+                          <img width="25" src="{{ asset('assets/images/icon/'.strtolower($pool->coin->type)).'.png' }}" alt="image">
+                          &nbsp;&nbsp;Go Mine
                         </a>
                       </td>
                     </tr>
