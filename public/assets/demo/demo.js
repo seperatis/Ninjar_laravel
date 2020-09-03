@@ -106,7 +106,7 @@ stats = {
         chart_title = 'Network Hashrate';
         stats.initChart(id, labels, networkHashRate, networkHashRate_unit, chart_title);
         id = 'network_difficulty_chart';
-        chart_title = 'Network Hashrate';
+        chart_title = 'Network Difficulty';
         stats.initChart(id, labels, networkDifficulty, networkDifficulty_unit, chart_title);
 
     },
