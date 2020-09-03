@@ -205,7 +205,7 @@
                         } else {
                             name = index;
                         }
-                        table = table + '<td>' + i + '</td>' + '<td>' + name + '</td>' +
+                        table = table + '<tr>' + '<td>' + i + '</td>' + '<td>' + name + '</td>' +
                             '<td>' + stats.formatter(value.hashrate, 2, '') + '</td>' +
                             '<td>' + value.sharesPerSecond + '</td>' + '</tr>';
 
