@@ -1,14 +1,14 @@
 <div class="sidebar">
     <div class="sidebar-wrapper">
         <div class="logo">
-            <a href="javascript:void(0)" class="simple-text logo-mini">
+            <a href="{{ url('/') }}" class="simple-text logo-mini">
                 @if(session(session('id'))->coin->type == 'LTC')
                     <img src="{{ asset('assets/images/lightcoin.png') }}">
                 @else
                     <img src="{{ asset('assets/images/dgb1.png') }}">
                 @endif
             </a>
-            <a href="javascript:void(0)" class="simple-text logo-normal">
+            <a href="{{ url('/') }}" class="simple-text logo-normal">
                {{ session(session('id'))->coin->name }}
             </a>
         </div>
