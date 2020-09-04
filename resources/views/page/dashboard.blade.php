@@ -164,7 +164,7 @@
                 showLoaderOnConfirm: true,
                 preConfirm: () => {
                     wallet = document.querySelector('#value').value;
-                    return fetch(`//luckyblocks.ninja:4000/api/pools/{{ session('id') }}/miners/${wallet}`)
+                    return fetch(`//luckyblocks.ninja:2052/api/pools/{{ session('id') }}/miners/${wallet}`)
                         .then(response => {
                             if (!response.ok) {
                                 throw new Error(response.statusText)

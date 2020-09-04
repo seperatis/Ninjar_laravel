@@ -47,8 +47,8 @@
                 responsive: true,
                 "order": [[ 0, "desc" ]],
                 "ajax": {
-                    url: "http://luckyblocks.ninja:4000/api/pools/{{ session('id') }}/blocks?page=0&pageSize=200",
-                    // "url": "http://luckyblocks.ninja:4000/api/pools/ltctestnet/blocks?page=0&pageSize=200",
+                    url: "http://luckyblocks.ninja:2052/api/pools/{{ session('id') }}/blocks?page=0&pageSize=200",
+                    // "url": "http://luckyblocks.ninja:2052/api/pools/ltctestnet/blocks?page=0&pageSize=200",
                     "type": "GET",
                     "dataSrc": "",
                 },
