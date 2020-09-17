@@ -61,12 +61,12 @@
                     {
                         "targets": 0,
                         "render": function ( data, type, row, meta ) {
-                            date = new Date(data.created);
-                            var localOffset = date.getTimezoneOffset() * 60000;
-                            var localTime = date.getTime();
-                            date = localTime - localOffset;
-                            newDate = new Date(date);
-                            return newDate.toString();
+                            var d = new Date();
+                            var n = d.getTimezoneOffset();
+                            var time = new Date(data.created);
+                            time.setMinutes(time.getMinutes() - n);
+                            console.log(time);
+                            return new Date(time);
                         }
                     },
                     {

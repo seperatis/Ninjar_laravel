@@ -40,7 +40,7 @@
                   <th>Algorithm</th>
                   <th class="text-center">Miners</th>
                   <th class="text-right">Pool Hashrate</th>
-                  <th class="text-right">Fee</th>
+                  {{--<th class="text-right">Fee</th>--}}
                   <th class="text-right">Network Hashrate</th>
                   <th class="text-right">Network Difficulty</th>
                   <th class="text-center">Action</th>
@@ -69,9 +69,9 @@
                       <td class="text-right">
                         {{ thousandsCurrencyFormat((int)$pool->poolStats->poolHashrate) }}H/s
                       </td>
-                      <td class="text-right">
-                        {{ $pool->poolFeePercent }}%
-                      </td>
+                      {{--<td class="text-right">--}}
+                        {{--{{ $pool->poolFeePercent }}%--}}
+                      {{--</td>--}}
                       <td class="text-right">
                         {{ thousandsCurrencyFormat((int)intval($pool->networkStats->networkHashrate)) }}H/s
                       </td>
@@ -94,7 +94,9 @@
         </div>
       </div>
     </div>
-
+    <div class="google-ads-980-120" style="margin-bottom: 30px">
+      <span style="font-size: 60px">980 X 120</span>
+    </div>
     <div class="row">
       <div class="col-md-12">
         <div class="card">
@@ -113,7 +115,7 @@
                   <th>Algorithm</th>
                   <th class="text-center">Miners</th>
                   <th class="text-right">Pool Hashrate</th>
-                  <th class="text-right">Fee</th>
+                  {{--<th class="text-right">Fee</th>--}}
                   <th class="text-right">Network Hashrate</th>
                   <th class="text-right">Network Difficulty</th>
                   <th class="text-center">Action</th>
@@ -142,9 +144,9 @@
                       <td class="text-right">
                         {{ thousandsCurrencyFormat((int)$pool->poolStats->poolHashrate) }}H/s
                       </td>
-                      <td class="text-right">
-                        {{ $pool->poolFeePercent }}%
-                      </td>
+                      {{--<td class="text-right">--}}
+                        {{--{{ $pool->poolFeePercent }}%--}}
+                      {{--</td>--}}
                       <td class="text-right">
                         {{ thousandsCurrencyFormat((int)intval($pool->networkStats->networkHashrate)) }}H/s
                       </td>

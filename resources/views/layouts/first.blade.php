@@ -14,6 +14,7 @@
     <link href="{{ asset('assets/css/nucleo-icons.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/black-dashboard.css?v=1.1.1') }}" rel="stylesheet" />
     <link href="{{ asset('assets/demo/demo.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/ads.css') }}" rel="stylesheet" />
 </head>
 
 <body class="pricing-page">
@@ -23,22 +24,25 @@
         <div class="navbar-wrapper">
             <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('assets/images/logo.png') }}" width="300"></a>
         </div>
-        <div class="google-ads" ></div>
+        <div class="google-ads-980-120" style="margin-left: 60px">
+           <span style="font-size: 60px">980 X 120</span>
+        </div>
         <div class="app-button-content">
-            <span>
-                <button class="btn btn-icon btn-round btn-simple btn-warning alert-button" style="border: none;">
-                    <i class="tim-icons icon-bell-55" style="font-size: 1.6em;"></i><span class="label_number">23</span>
-                </button>
 
-            </span>
-            <button class="btn btn-primary btn-round">
-                <img src="{{ asset('assets/images/apple-logo.svg') }}" alt="" style="width: 18px; margin-top: -6px;">
-                &nbsp;&nbsp;IOS APP
-            </button>
-            <button class="btn btn-info btn-round">
-                <img src="{{ asset('assets/images/android-logo.svg') }}" alt="" style="width: 18px; margin-top: -6px;">
-                &nbsp;&nbsp;Android
-            </button>
+            {{--<span>--}}
+                {{--<button class="btn btn-icon btn-round btn-simple btn-warning alert-button" style="border: none;">--}}
+                    {{--<i class="tim-icons icon-bell-55" style="font-size: 1.6em;"></i><span class="label_number">23</span>--}}
+                {{--</button>--}}
+
+            {{--</span>--}}
+            {{--<button class="btn btn-primary btn-round">--}}
+                {{--<img src="{{ asset('assets/images/apple-logo.svg') }}" alt="" style="width: 18px; margin-top: -6px;">--}}
+                {{--&nbsp;&nbsp;IOS APP--}}
+            {{--</button>--}}
+            {{--<button class="btn btn-info btn-round">--}}
+                {{--<img src="{{ asset('assets/images/android-logo.svg') }}" alt="" style="width: 18px; margin-top: -6px;">--}}
+                {{--&nbsp;&nbsp;Android--}}
+            {{--</button>--}}
         </div>
     </div>
 </nav>
@@ -206,19 +210,7 @@
         });
     });
 </script>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/5f2c28f8ed9d9d262708bd33/default';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-    })();
-</script>
-<!--End of Tawk.to Script-->
+
 @yield('javascript')
 </body>
 

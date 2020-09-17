@@ -1,4 +1,4 @@
-<div class="sidebar">
+<div class="sidebar bg-primary">
     <div class="sidebar-wrapper">
         <div class="logo">
             <a href="{{ url('/') }}" class="simple-text logo-mini">

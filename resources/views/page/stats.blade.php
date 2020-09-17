@@ -22,6 +22,9 @@
     ?>
     <input type="hidden" id="data" value="{{ json_encode($stats) }}">
     <div class="row">
+        <div class="col-lg-12 text-right mb-3">
+            <a href="{{ url('/connect') }}" class="btn btn-info" style="border-radius: 100px">Connect my miners</a>
+        </div>
         <div class="col-lg-6">
             <div class="card card-chart">
                 <div class="card-header">
@@ -182,7 +185,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 @endsection
 
